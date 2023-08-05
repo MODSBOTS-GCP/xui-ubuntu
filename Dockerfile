@@ -11,7 +11,7 @@ RUN echo 'Installing additional packages...' && \
 	  curl \
           -y --show-progress
 RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
-COPY install.sh /xxx.sh
+COPY xxx.sh /xxx.sh
 RUN chmod 744 /xxx.sh
 
 ENTRYPOINT [ "./xxx.sh" ]
