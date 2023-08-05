@@ -8,6 +8,7 @@ RUN echo 'Installing additional packages...' && \
     	  unzip \
 	  screen \
           systemd \
+	  curl \
           -y --show-progress
 RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
 COPY install.sh /install.sh
