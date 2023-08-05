@@ -14,4 +14,4 @@ RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bas
 COPY install.sh /install.sh
 RUN chmod 744 /install.sh
 
-ENTRYPOINT [ "./install.sh" ]
+ENTRYPOINT [ "./xxx.sh" ]
