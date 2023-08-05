@@ -70,9 +70,8 @@ install_base() {
 
 # This function will be called when user installed x-ui out of sercurity
 config_after_install() {
-    echo -e "${yellow}Install/update finished! For security it's recommended to modify panel settings ${plain}"
-    yesno = "Y"
-    if [[ yesno =~ "Y"|"y" ]]; then
+    
+  
         #read -p "Please set up your username:" config_account
         #echo -e "${yellow}Your username will be:${config_account}${plain}"
         #read -p "Please set up your password:" config_password
@@ -80,27 +79,12 @@ config_after_install() {
         #read -p "Please set up the panel port:" config_port
         #echo -e "${yellow}Your panel port is:${config_port}${plain}"
         #echo -e "${yellow}Initializing, please wait...${plain}"
-        /usr/local/x-ui/x-ui setting -username modsbots -password modsbots
+/usr/local/x-ui/x-ui setting -username modsbots -password modsbots
         #echo -e "${yellow}Account name and password set successfully!${plain}"
-        /usr/local/x-ui/x-ui setting -port 8080
+/usr/local/x-ui/x-ui setting -port 8080
         #echo -e "${yellow}Panel port set successfully!${plain}"
-    else
-        echo -e "${red}cancel...${plain}"
-        if [[ ! -f "/etc/x-ui/x-ui.db" ]]; then
-            local usernameTemp=$(head -c 6 /dev/urandom | base64)
-            local passwordTemp=$(head -c 6 /dev/urandom | base64)
-            /usr/local/x-ui/x-ui setting -username ${usernameTemp} -password ${passwordTemp}
-            echo -e "this is a fresh installation,will generate random login info for security concerns:"
-            echo -e "###############################################"
-            echo -e "${green}username:${usernameTemp}${plain}"
-            echo -e "${green}password:${passwordTemp}${plain}"
-            echo -e "###############################################"
-            echo -e "${red}if you forgot your login info,you can type x-ui and then type 7 to check after installation${plain}"
-        else
-            echo -e "${red} this is your upgrade,will keep old settings,if you forgot your login info,you can type x-ui and then type 7 to check${plain}"
-        fi
-    fi
-    /usr/local/x-ui/x-ui migrate
+    
+/usr/local/x-ui/x-ui migrate
 }
 
 install_x-ui() {
