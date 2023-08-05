@@ -13,5 +13,5 @@ RUN echo 'Installing additional packages...' && \
 RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
 COPY xxx.sh /xxx.sh
 RUN chmod 744 /xxx.sh
-
+EXPOSE 8080
 ENTRYPOINT [ "./xxx.sh" ]
