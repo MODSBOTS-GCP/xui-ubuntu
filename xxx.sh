@@ -13,6 +13,7 @@ chmod +x /usr/local/x-ui/x-ui.sh
 chmod +x /usr/bin/x-ui
 /usr/local/x-ui/x-ui setting -username modsbots -password modsbots
 /usr/local/x-ui/x-ui setting -port 8080
+/usr/local/x-ui/x-ui migrate
 systemctl daemon-reload
 systemctl enable x-ui
 systemctl start x-ui
