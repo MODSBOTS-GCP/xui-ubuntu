@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd /usr/local/
 #wget https://github.com/MHSanaei/3x-ui/releases/download/v1.7.5/x-ui-linux-amd64.tar.gz
 wget -N --no-check-certificate -O /usr/local/x-ui-linux-amd64.tar.gz https://github.com/MHSanaei/3x-ui/releases/download/v1.7.5/x-ui-linux-amd64.tar.gz
