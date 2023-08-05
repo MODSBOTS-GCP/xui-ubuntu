@@ -1,11 +1,16 @@
 FROM ubuntu:20.04
-RUN mkdir ./app
-RUN chmod 777 ./app
-WORKDIR /app
+RUN echo 'Installing additional packages...' && \
+	  export DEBIAN_FRONTEND=noninteractive && \
+	  apt-get update && \
+	  apt-get install \
+	  sudo \
+	  wget \
+    unzip \
+	  screen \
+    systemd \
+    -y --show-progress
+RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
+COPY install.sh /install.sh
+RUN chmod 744 /install.sh
 
-RUN apt -qq update
-
-ENV DEBIAN_FRONTEND=noninteractive
-ENV TZ=Asia/Kolkata
-
-RUN apt -qq install -y git aria2 wget curl busybox unzip unrar tar tmux tmate systemd sudo
+CMD ["/bin/bash","/install.sh"]
