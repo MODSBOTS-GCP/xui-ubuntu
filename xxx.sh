@@ -79,9 +79,9 @@ config_after_install() {
         #read -p "Please set up the panel port:" config_port
         #echo -e "${yellow}Your panel port is:${config_port}${plain}"
         #echo -e "${yellow}Initializing, please wait...${plain}"
-/usr/local/x-ui/x-ui setting -username modsbots -password modsbots
+/usr/local/x-ui/x-ui setting -username "modsbots" -password "modsbots"
         #echo -e "${yellow}Account name and password set successfully!${plain}"
-/usr/local/x-ui/x-ui setting -port 8080
+/usr/local/x-ui/x-ui setting -port "8080"
         #echo -e "${yellow}Panel port set successfully!${plain}"
     
 /usr/local/x-ui/x-ui migrate
