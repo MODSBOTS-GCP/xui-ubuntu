@@ -8,4 +8,4 @@ RUN apt -qq update
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Kolkata
 
-RUN apt -qq install -y git aria2 wget curl busybox unzip unrar tar tmux tmate
+RUN apt -qq install -y git aria2 wget curl busybox unzip unrar tar tmux tmate systemd sudo
