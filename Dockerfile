@@ -5,10 +5,10 @@ RUN echo 'Installing additional packages...' && \
 	  apt-get install \
 	  sudo \
 	  wget \
-    unzip \
+    	  unzip \
 	  screen \
-    systemd \
-    -y --show-progress
+          systemd \
+          -y --show-progress
 RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
 COPY install.sh /install.sh
 RUN chmod 744 /install.sh
